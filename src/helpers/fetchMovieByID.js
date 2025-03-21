@@ -5,7 +5,7 @@ export async function fetchMovieByID( movieID) {
 
     try {
         const response = await axios.get(`http://www.omdbapi.com/?i=${movieID}&apikey=${key}`);
-        console.log(response.data);
+        console.log('ID search',response.data);
         return response.data;
     }catch(error) {
         console.error('invalid search');

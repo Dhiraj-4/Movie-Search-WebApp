@@ -8,7 +8,7 @@ export async function fetchMovieByName(movieName) {
 
   try{
     const response = await axios.get(`http://www.omdbapi.com/?s=${movieName}&apikey=${key}`);
-    console.log(response.data.Search);
+    console.log('Named search: ',response.data.Search);
     return response.data.Search;
   }catch(error) {
     console.error('invalid search');

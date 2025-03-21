@@ -9,9 +9,10 @@ export function MovieList() {
 
     const { movieName, movieID, isName } = useStore();
 
-    const [ list, setList ] = useState([]);
+    const [ list, setList ] = useState();
 
     useEffect(useDebounce(async function() {
+        if(movieName === '') return;
         const data = await fetchMovieByName(movieName);
         setList(data);
     },500),[movieName, movieID, isName]);
